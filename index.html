@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smartify – Make Life Smarter</title>
+    <meta name="description" content="Shop the latest smart electronics at Smartify. Experience the future with AI-powered gadgets." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pastel: {
+                blue: '#AEE6F9',
+                purple: '#D5C7FF',
+                green: '#BFF7DA',
+                yellow: '#FFF4A3',
+                peach: '#FFD8C2',
+                pink: '#FFCCDF',
+                dark: '#2D3748',
+              },
+            },
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+              tech: ['Orbitron', 'sans-serif'],
+              heading: ['Montserrat', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pulse-soft': 'pulseSoft 3s infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'neon-pulse': 'neonPulse 2s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translate3d(0, 20px, 0)' },
+                '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' },
+              },
+              pulseSoft: {
+                '0%, 100%': { boxShadow: '0 0 10px rgba(213, 199, 255, 0.3)' },
+                '50%': { boxShadow: '0 0 25px rgba(174, 230, 249, 0.6)' },
+              },
+              neonPulse: {
+                '0%, 100%': { 
+                  borderColor: 'rgba(59, 130, 246, 0.5)', 
+                  boxShadow: '0 0 15px rgba(59, 130, 246, 0.4)'
+                },
+                '50%': { 
+                  borderColor: 'rgba(139, 92, 246, 0.6)', 
+                  boxShadow: '0 0 25px rgba(139, 92, 246, 0.5)'
+                },
+              },
+              float: {
+                '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
+                '50%': { transform: 'translate3d(0, -10px, 0)' },
+              }
+            },
+            backgroundImage: {
+              'pastel-gradient': 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)',
+              'rainbow-soft': 'linear-gradient(to right, #AEE6F9, #D5C7FF, #FFCCDF)',
+              'hero-blob': 'radial-gradient(circle at center, rgba(255, 204, 223, 0.4) 0%, transparent 70%)',
+              'neon-glow': 'radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%)'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #f0fdfa; /* Very light teal base */
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(174, 230, 249, 0.4) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(213, 199, 255, 0.4) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, rgba(191, 247, 218, 0.4) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, rgba(255, 204, 223, 0.4) 0px, transparent 50%);
+        background-attachment: fixed;
+        color: #1e293b;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+        border-radius: 1.5rem;
+        transform: translate3d(0, 0, 0); /* Force GPU */
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.02);
+        border-radius: 1.5rem;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform: translate3d(0, 0, 0); /* Force GPU */
+        will-change: transform, box-shadow;
+      }
+      .glass-card:hover {
+        background: rgba(255, 255, 255, 0.6);
+        border-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.08);
+        transform: translateY(-8px);
+      }
+      .glass-input {
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      .glass-input:focus {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
+        outline: none;
+      }
+      
+      /* Global Focus Styles for Accessibility */
+      :focus-visible {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(203, 213, 225, 0.5);
+        border-radius: 3px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(148, 163, 184, 0.8);
+      }
+      
+      .text-gradient-pastel {
+        background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?deps=react@18.2.0,react-dom@18.2.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.358.0?deps=react@18.2.0",
+    "@google/genai": "https://esm.sh/@google/genai@0.1.2",
+    "three": "https://esm.sh/three@0.160.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.15.19?deps=react@18.2.0,react-dom@18.2.0,three@0.160.0",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@9.102.6?deps=react@18.2.0,react-dom@18.2.0,three@0.160.0,@react-three/fiber@8.15.19",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
