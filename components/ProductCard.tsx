@@ -1,11 +1,9 @@
 
 import React from 'react';
-import * as ReactRouterDOM from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ShoppingBag, Star, Zap, Plus, Cpu, Maximize2 } from 'lucide-react';
 import { Product } from '../types';
 import { useCart } from '../context/CartContext';
-
-const { Link } = ReactRouterDOM;
 
 interface ProductCardProps {
   product: Product;

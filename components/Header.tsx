@@ -1,12 +1,10 @@
 
 import React, { useState } from 'react';
-import * as ReactRouterDOM from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Search, Menu, User, Heart, ChevronDown, Package, LogOut, Wallet, Cpu, Zap, LifeBuoy, Share2, Check } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useUser } from '../context/UserContext';
 import { MAIN_CATEGORIES } from '../types';
-
-const { Link, useNavigate } = ReactRouterDOM;
 
 const Header: React.FC = () => {
   const { cart } = useCart();

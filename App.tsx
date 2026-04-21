@@ -1,6 +1,6 @@
 
 import React from 'react';
-import * as ReactRouterDOM from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ElectronBackground from './components/ElectronBackground';
@@ -17,8 +17,6 @@ import Account from './pages/Account';
 import Orders from './pages/Orders';
 import Wishlist from './pages/Wishlist';
 
-const { HashRouter, Routes, Route, useLocation } = ReactRouterDOM;
-
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   React.useEffect(() => {
@@ -32,7 +30,7 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       {/* 
          - ElectronBackground is fixed at z-0. 
          - Main content wrapper is relative z-10 to sit on top.
@@ -62,7 +60,7 @@ const App: React.FC = () => {
           <Footer />
         </div>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

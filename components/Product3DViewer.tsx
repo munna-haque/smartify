@@ -98,7 +98,7 @@ const Product3DViewer: React.FC<{ imageUrl: string }> = ({ imageUrl }) => {
       <Canvas shadows dpr={[1, 2]} camera={{ fov: 50, position: [0, 0, 5] }}>
         <Suspense fallback={<Loader />}>
           <ErrorBoundary fallback={<FallbackModel />}>
-             <Stage environment="city" intensity={0.5} shadows={{ opacity: 0.4, blur: 2 }}>
+             <Stage environment="city" intensity={0.5} shadows="contact">
                <Model imageUrl={imageUrl} />
              </Stage>
           </ErrorBoundary>
