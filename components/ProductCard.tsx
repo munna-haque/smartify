@@ -34,6 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <img 
             src={product.image} 
             alt={product.name} 
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-110"
         />
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -120,15 +121,17 @@
       }
       .glass-input:focus {
         background: rgba(255, 255, 255, 0.9);
-        border-color: #3b82f6;
-        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
+        border-color: #8b5cf6;
+        box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.25);
         outline: none;
       }
       
-      /* Global Focus Styles for Accessibility */
+      /* Global Focus Styles for Accessibility - Neon Theme */
       :focus-visible {
-        outline: 2px solid #3b82f6;
-        outline-offset: 2px;
+        outline: 2px solid #a855f7; /* Violet-500 */
+        outline-offset: 4px;
+        box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.25);
+        border-radius: 4px;
       }
 
       .custom-scrollbar::-webkit-scrollbar {
@@ -161,10 +164,10 @@
     "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?deps=react@18.2.0,react-dom@18.2.0",
     "lucide-react": "https://esm.sh/lucide-react@0.358.0?deps=react@18.2.0",
     "@google/genai": "https://esm.sh/@google/genai@0.1.2",
-    "three": "https://esm.sh/three@0.160.0",
-    "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.15.19?deps=react@18.2.0,react-dom@18.2.0,three@0.160.0",
-    "@react-three/drei": "https://esm.sh/@react-three/drei@9.102.6?deps=react@18.2.0,react-dom@18.2.0,three@0.160.0,@react-three/fiber@8.15.19",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7",
+    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.2",
+    "three": "https://aistudiocdn.com/three@^0.181.2"
   }
 }
 </script>

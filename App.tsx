@@ -1,8 +1,10 @@
+
 import React from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ElectronBackground from './components/ElectronBackground';
+import ChatWidget from './components/ChatWidget';
 import Home from './pages/Home';
 import CategoryPage from './pages/CategoryPage';
 import ProductDetail from './pages/ProductDetail';
@@ -37,6 +39,7 @@ const App: React.FC = () => {
       */}
       <div className="flex flex-col min-h-screen bg-transparent text-slate-800 font-sans selection:bg-pastel-purple selection:text-slate-900 relative">
         <ElectronBackground />
+        <ChatWidget />
         
         <div className="relative z-10 flex flex-col min-h-screen">
           <ScrollToTop />

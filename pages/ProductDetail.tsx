@@ -1,10 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
-import { Minus, Plus, ShoppingBag, Truck, Shield, Cpu, Battery, Wifi, Cuboid } from 'lucide-react';
+import { Minus, Plus, ShoppingBag, Truck, Shield, Cpu, Battery, Wifi } from 'lucide-react';
 import { getProductById, getProductsByCategory } from '../data/products';
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ProductCard';
-import Product3DViewer from '../components/Product3DViewer';
 
 const { useParams, Link } = ReactRouterDOM;
 
@@ -40,16 +40,18 @@ const ProductDetail: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
-          {/* Product Image Gallery / 3D Viewer */}
+          {/* Product Image Gallery */}
           <div className="space-y-6">
             <div className="aspect-square glass-panel p-2 relative group flex items-center justify-center">
                <div className="absolute inset-0 bg-pastel-blue/20 blur-[80px] opacity-40 rounded-full m-10 pointer-events-none"></div>
-               <div className="absolute top-4 right-4 z-20 bg-white/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-slate-600 flex items-center gap-1 shadow-sm border border-white">
-                 <Cuboid size={14} className="text-blue-500"/> 3D View
-               </div>
-               {/* 3D Viewer Component - nested inside glass panel */}
-               <div className="w-full h-full rounded-2xl overflow-hidden bg-white/30">
-                  <Product3DViewer imageUrl={product.image} />
+               
+               {/* Main Product Image */}
+               <div className="w-full h-full rounded-2xl overflow-hidden bg-white/30 flex items-center justify-center">
+                  <img 
+                    src={product.image} 
+                    alt={product.name} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
                </div>
             </div>
             <div className="grid grid-cols-4 gap-4">
